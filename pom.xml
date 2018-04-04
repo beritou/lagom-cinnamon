@@ -86,6 +86,20 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-classpath</argument>
+                        <classpath/>
+                        <argument>-javaagent:${project.build.directory}/dependency/cinnamon-agent.jar</argument>
+                        <argument>... your other arguments here ...</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
